@@ -13,23 +13,127 @@ T4Tech provides open, reproducible datasets for training and evaluating ML/DL mo
 
 ---
 
-## 📦 Datasets
+# T4Tech Power System Cybersecurity Dataset
 
-### 🧪 Training (Zone 2)
-- **File:** `data/single-zone/zone2_training_dataset.csv`
-- **Sampling rate:** 4,800 Hz (80 samples/cycle @ 60 Hz)
-- **Duration:** ~22.0 s (≈105,768 samples)
-- **Features (14):** 3ϕ currents + neutral and 3ϕ voltages from **MU23** and **MU32**  
-  *(Exact list in `data/schemas/single_zone_features.csv`.)*
-- **Classes (18):** 0..17  
-  *(Map in `data/schemas/class_map.csv`)*
+## IEEE Citation Format
 
-### ⚡ Streaming Events (Zone 2)
-- **Event 1:** `data/single-zone/streaming/event1.csv`  
-  1.00–1.20s: SLG A–N (1) • 2.00–2.20s: LL B–C (7) • 3.00–3.20s: DLG AC–N (10) • 4.00–4.20s: CT Ratio MU32 (4) • 5.00–5.20s: PT Ratio MU23 (13)
-- **Event 2:** `data/single-zone/streaming/event2.csv`  
-  1.00–1.20s: ABC (14) • 2.00–2.20s: ABC–G (15) • 4.00–4.20s: GPS Spoof MU32 (16) • 5.00–5.20s: SLG in another zone → **treat as unseen (−1)**
+**Paper Reference:**
 
+E. Abukhousa, S. S. F. Syed Afroz, F. Alsaeed, A. Qwbaiban, S. Zonouz, and A. P. S. Meliopoulos, "The Wisdom of the Crowd: High-Fidelity Classification of Cyber-Attacks and Faults in Power Systems Using Ensemble and Machine Learning," to be published in *Proc. IEEE PES Innovative Smart Grid Technologies (ISGT) Middle East*, Dubai, UAE, Nov. 23-26, 2025.
+
+## Dataset Information
+
+This high-fidelity power system cybersecurity dataset was developed as part of the research presented in the above paper. The dataset provides comprehensive measurements from a realistic digital substation simulation, designed to support machine learning research in power system fault detection and cybersecurity.
+
+### Dataset Generation Details
+
+- **Software Platform**: WinIGS (Integrated Grounding System Analysis)
+- **Institution**: Power System Control and Automation Laboratory (PSCAL), Georgia Institute of Technology
+- **Simulation Environment**: High-fidelity electromagnetic transient (EMT) simulations
+- **Sampling Rate**: 4.8 kHz (80 samples per cycle at 60 Hz)
+- **Time Resolution**: 208 microseconds
+- **Data Format**: COMTRADE (Common Format for Transient Data Exchange)
+
+### WinIGS Software Information
+
+WinIGS is a proprietary power system analysis and grounding simulation software developed by Advanced Grounding Concepts (AGC). The software enables detailed electromagnetic transient simulations that capture the dynamic interactions between synchronous generators and inverter-based resources (IBRs) under realistic operating conditions.
+
+**Software Details:**
+- **Name**: WinIGS Integrated Grounding System Analysis for Windows
+- **Version**: 8.1.5
+- **Developer**: Advanced Grounding Concepts (AGC), Alpharetta, GA, USA
+- **Website**: https://ap-concepts.com/
+
+### Laboratory Information
+
+**Power System Control and Automation Laboratory (PSCAL)**
+- **Institution**: School of Electrical and Computer Engineering, Georgia Institute of Technology
+- **Location**: Atlanta, GA, USA
+- **Website**: https://pscal.ece.gatech.edu/
+- **Research Focus**: Power system protection, control, cybersecurity, and grid modernization
+
+## Open Source Research Initiative
+
+This dataset is made publicly available to support and advance research in power system cybersecurity and machine learning applications. We encourage the research community to utilize this high-fidelity dataset for:
+
+- Power system fault classification algorithms
+- Cybersecurity anomaly detection methods
+- Machine learning model development and benchmarking
+- Real-time protection system research
+- Cyber-physical security analysis
+
+### Citation Request
+
+If you use this dataset in your research, please cite our work using the IEEE format provided above. Your citations help support continued research and dataset development in this critical area.
+
+### Dataset Contents
+
+The dataset includes three main components:
+
+1. **Training Dataset** (`zone2_training_dataset.csv`)
+   - Duration: 22 seconds (21,999,760 microseconds)
+   - Samples: 105,768 observations
+   - Classes: 18 (1 normal + 17 fault/attack scenarios)
+   - Features: 14 electrical measurements + 1 label
+
+2. **Event 1** (`event1.csv`)
+   - Duration: 6 seconds
+   - Samples: 28,800 observations
+   - Features: 14 electrical measurements (unlabeled)
+
+3. **Event 2** (`event2.csv`)
+   - Duration: 6 seconds
+   - Samples: 28,800 observations
+   - Features: 14 electrical measurements (unlabeled)
+
+### Measurement Channels
+
+The dataset includes voltage and current measurements from two Merging Units (MUs):
+
+**MU23 Measurements:**
+- Three-phase currents: MU23_I23_a, MU23_I23_b, MU23_I23_c, MU23_I23_n
+- Three-phase voltages: MU23_V2_an, MU23_V2_bn, MU23_V2_cn
+
+**MU32 Measurements:**
+- Three-phase currents: MU32_I32_a, MU32_I32_b, MU32_I32_c, MU32_I32_n
+- Three-phase voltages: MU32_V32_an, MU32_V32_bn, MU32_V32_cn
+
+### Fault and Attack Scenarios
+
+The training dataset includes 17 distinct anomaly classes:
+- Single line faults (A-N, B-N, C-N)
+- Double line faults (A-B, A-C, B-C)
+- Double line-to-ground faults (AB-N, AC-N, BC-N)
+- Three-phase faults (AB-C, ABC-N)
+- CT ratio attacks on MU32 and MU23
+- PT ratio attacks on MU32 and MU23
+- GPS spoofing attacks on MU32 and MU23
+
+## Publication Venue
+
+**IEEE PES Innovative Smart Grid Technologies (ISGT) Middle East**
+- **Date**: November 23-26, 2025
+- **Location**: Dubai, UAE
+- **Organizers**: IEEE Power & Energy Society (PES) and University of Dubai
+- **Conference Focus**: Smart grid technologies, renewable integration, and grid modernization
+
+## Contact Information
+
+For questions about the dataset or research collaboration opportunities, please contact:
+
+**Primary Authors:**
+- Emad Abukhousa (emadak@gatech.edu)
+- Syed Sohail Feroz Syed Afroz (safroz7@gatech.edu)
+- A.P. Sakis Meliopoulos (sakis.m@gatech.edu)
+
+**Institution:**
+School of Electrical and Computer Engineering  
+Georgia Institute of Technology  
+Atlanta, GA, USA
+
+---
+
+*This dataset represents a significant contribution to the power system cybersecurity research community. We encourage researchers worldwide to utilize this resource and contribute to the advancement of secure and resilient power systems through machine learning and artificial intelligence applications.*
 ---
 # T4Tech Power System Dataset Analysis
 
