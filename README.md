@@ -2,6 +2,13 @@
   <img src="assets/CS7641_ML_Project_Logo.png" alt="T4Tech" width="85%">
 </p>
 
+ <p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Emadeddin/T4Tech/blob/main/CS7641_ML_Project_Logo.png?raw=true">
+  <img src="https://github.gatech.edu/ppradens3/G44-ML-CS-7641/blob/main/CS7641_ML_Project_Logo.png?raw=true" alt="Description of image" style="width: 300; height: auto;">
+</picture>
+</p>
+
 <h1 align="center">T4Tech: Machine & Deep Learning for High-Fidelity Grid Anomaly Classification</h1>
 
 T4Tech provides open, reproducible datasets for training and evaluating ML/DL models on inverter-rich power systems using **time-domain signals** sampled at **4.8 kHz**. It includes a **Zone-2 training dataset** and **two streaming event datasets** designed for benchmarking real-time classification pipelines.
