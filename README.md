@@ -232,6 +232,43 @@ The training dataset contains **35 distinct time periods** alternating between n
 - **High-Frequency Sampling**: ~4,808 Hz providing detailed temporal resolution
 - **Rapid Transitions**: Each fault/attack scenario captured in sub-second intervals
 
+## 📡 Streaming Prediction Events
+## Event 1 — Label Period Distribution (6 s stream @ 4.8 kHz)
+
+> **Note:** `event1.csv` is unlabeled; labels below are the reference timeline for evaluation.
+
+| Period | Start (s) | End (s) | Duration (s) | Label | Class Name |
+|---:|---:|---:|---:|---:|---|
+| 1 | 0.00 | 1.00 | 1.00 | 0 | Normal Operation |
+| 2 | 1.00 | 1.20 | 0.20 | 1 | Single Line Fault A–N |
+| 3 | 1.20 | 2.00 | 0.80 | 0 | Normal Operation |
+| 4 | 2.00 | 2.20 | 0.20 | 7 | Double Line Fault B–C |
+| 5 | 2.20 | 3.00 | 0.80 | 0 | Normal Operation |
+| 6 | 3.00 | 3.20 | 0.20 | 10 | DLG Fault AC–N |
+| 7 | 3.20 | 4.00 | 0.80 | 0 | Normal Operation |
+| 8 | 4.00 | 4.20 | 0.20 | 4 | CT Ratio Attack (MU32) |
+| 9 | 4.20 | 5.00 | 0.80 | 0 | Normal Operation |
+| 10 | 5.00 | 5.20 | 0.20 | 13 | PT Ratio Attack (MU23) |
+| 11 | 5.20 | 6.00 | 0.80 | 0 | Normal Operation |
+
+
+## Event 2 — Label Period Distribution (6 s stream @ 4.8 kHz)
+
+> **Note:** `event2.csv` is unlabeled; the last anomaly is **out-of-zone** for the single-zone set and should be treated as **−1 (unseen)**.
+
+| Period | Start (s) | End (s) | Duration (s) | Label | Class Name |
+|---:|---:|---:|---:|---:|---|
+| 1 | 0.00 | 1.00 | 1.00 | 0 | Normal Operation |
+| 2 | 1.00 | 1.20 | 0.20 | 14 | Three-Phase Fault AB–C |
+| 3 | 1.20 | 2.00 | 0.80 | 0 | Normal Operation |
+| 4 | 2.00 | 2.20 | 0.20 | 15 | Three-Phase + Ground Fault ABC–N |
+| 5 | 2.20 | 4.00 | 1.80 | 0 | Normal Operation |
+| 6 | 4.00 | 4.20 | 0.20 | 16 | GPS Spoofing (MU32) |
+| 7 | 4.20 | 5.00 | 0.80 | 0 | Normal Operation |
+| 8 | 5.00 | 5.20 | 0.20 | −1 | SLG in another zone (**unseen**) |
+| 9 | 5.20 | 6.00 | 0.80 | 0 | Normal Operation |
+
+
 ### Event Data Pattern
 - **Similar Sampling Rate**: ~4,800 Hz, consistent with training data
 - **Extended Duration**: 6-second windows (much longer than training periods)
