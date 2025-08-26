@@ -7,7 +7,8 @@
 </picture>
 </p>
 
-<h1 align="center">T4Tech: Machine & Deep Learning for High-Fidelity Grid Anomaly Classification</h1>
+<h1 align="center">T4Tech: High-Fidelity Grid Fault & Cyberattack Dataset (Training + Streaming)</h1>
+
 
 T4Tech provides open, reproducible datasets for training and evaluating ML/DL models on inverter-rich power systems using **time-domain signals** sampled at **4.8 kHz**. It includes a **Zone-2 training dataset** and **two streaming event datasets** designed for benchmarking real-time classification pipelines.
 
