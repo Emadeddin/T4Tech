@@ -1,11 +1,9 @@
-<p align="center">
-  <img src="assets/CS7641_ML_Project_Logo.png" alt="T4Tech" width="85%">
-</p>
+
 
  <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Emadeddin/T4Tech/blob/main/CS7641_ML_Project_Logo.png?raw=true">
-  <img src="https://github.gatech.edu/ppradens3/G44-ML-CS-7641/blob/main/CS7641_ML_Project_Logo.png?raw=true" alt="Description of image" style="width: 300; height: auto;">
+  <img src="https://github.com/Emadeddin/T4Tech/blob/main/CS7641_ML_Project_Logo.png?raw=true" alt="Description of image" style="width: 300; height: auto;">
 </picture>
 </p>
 
