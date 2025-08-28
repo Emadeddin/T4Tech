@@ -28,7 +28,7 @@ This high-fidelity power system cybersecurity dataset was developed as part of t
 
 ### Dataset Generation Details
 
-- **Software Platform**: WinIGS (Integrated Grounding System Analysis)
+- **Software Platform**: WinIGS
 - **Institution**: Power System Control and Automation Laboratory (PSCAL), Georgia Institute of Technology
 - **Simulation Environment**: High-fidelity electromagnetic transient (EMT) simulations
 - **Sampling Rate**: 4.8 kHz (80 samples per cycle at 60 Hz)
